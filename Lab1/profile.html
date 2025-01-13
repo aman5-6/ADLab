@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume </title>
+    <style>
+        html {
+  box-sizing: border-box;
+}
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+.container {
+  display: flex;
+  max-width: 960px;
+  background-color: #eaeaea;
+  justify-content: space-between;
+  margin: 20px auto;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1)
+}
+.profile {
+  flex-basis: 35%;
+  background-color: #39383a;
+  color: #ababab;
+}
+.profile-photo {
+  height: 270px;
+  background-image: url(./profile.png);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+.profile-info {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+.profile-text {
+  font-size: 13px;
+  line-height: 24.19px;
+  margin-bottom: 50px;
+}
+.heading {
+  margin: 0;
+  padding-bottom: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.heading-light {
+  color: #ffffff;
+  border-bottom: 2px #5a5a5a dashed;
+}
+.contacts {
+  margin-bottom: 70px;
+}
+.contacts-title {
+  color: #fff;
+  margin-bottom: 13px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.contacts-text {
+  color: #ababab;
+  text-decoration: none;
+  padding-left: 27px;
+  line-height: 20.97px;
+}
+.contacts-item {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 2px #5a5a5a dashed;
+}
+address {
+  font-style: normal;
+}
+.fas {
+  margin-right: 7px;
+}
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 40px;
+}
+.language {
+  width: 100px;
+  height: 100px;
+  border: 6px solid #5c5c5c;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin-right: 30px;
+}
+.language:nth-child(3) {
+  margin-bottom: 0;
+}
+.language-text {
+  text-transform: uppercase;
+  font-size: 11px
+}
+.languages-per {
+  font-size: 15px;
+  font-weight: 600;
+}
+.lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.line {
+  display: block;
+  width: 90px;
+  height: 2px;
+  background-color: #5c5c5c;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.line:nth-child(2) {
+  width: 100px;
+  margin-left: 20px;
+}
+.resume {
+  padding: 25px 30px;
+  flex-basis: 63%;
+  background-color: #fff;
+}
+.resume-wrap {
+  padding: 36px 56px;
+  border: 1px solid rgba(168, 168, 168, 0.44);
+  min-height: 100%;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 38px;
+}
+.logo-img {
+  width: 90px;
+  height: 90px;
+  border: 1px solid #39383a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-lines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 17px;
+  margin-right: 17px;
+}
+.logo-line {
+  width: 43px;
+  height: 2px;
+  background-color: #39383a;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.logo-lines_left .logo-line:nth-child(2) {
+  margin-right: 20px;
+  width: 55px;
+}
+.logo-lines_right .logo-line:nth-child(2) {
+  margin-left: 20px;
+  width: 55px;
+}
+.about {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.name {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 10.75px;
+  margin-bottom: 10px;
+}
+.position {
+  display: inline-block;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #808080;
+  margin-bottom: 30px;
+}
+.about-address {
+  font-size: 13px;
+  margin-bottom: 15px;
+  font-family: Roboto;
+}
+.about-contacts {
+  font-size: 8px;
+}
+.about-contacts__link {
+  text-decoration: none;
+  color: #777777;
+}
+.heading_dark {
+  font-size: 16px;
+  font-weight: 400;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 37px;
+}
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+.list-item {
+  position: relative;
+  padding-left: 40px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 2px dashed #ececec;
+}
+.list-item:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #000;
+}
+.list-item__title {
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}.list-item__date {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.list-item__text {
+  font-size: 10px;
+  color: #777;
+}
+.list-item_non-border {
+  border: none;
+}
+.heading_skills {
+  margin-bottom: 48px;
+}
+.skills-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+.skills-list__item {
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+}
+.level {
+  width: 70%;
+  height: 8px;
+  border: 1px solid #39383a;
+  position: relative;
+}
+.level:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #898989;
+}
+.level-80:before {
+  width: 80%;
+}
+.level-90:before {
+  width: 90%;
+}
+.level-50:before {
+  width: 50%;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    width: 70%;
+  }
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+    border: 3px solid #fff;
+    margin: auto;
+    margin-top: 40px;
+  }
+  .profile {
+    position: relative;
+  }
+  .profile:before {
+    content: '';
+    width: 100%;
+    height: 150px;
+    background-color: #03A9F4;
+    display: block;
+    position: absolute;
+  }
+  .profile-photo {
+    position: relative;
+    z-index: 0;
+  }
+  .lines {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+  .resume {
+    padding: 10px;
+  }
+  .resume-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .list-item__title {
+    font-size: 14px;
+  }
+  .list-item__date {
+    font-size: 12px;
+  }
+  .list-item__text {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .about-contacts__link {
+    display: block;
+    font-size: 13px;
+  }
+}
+@media (max-width: 567px) {
+  .logo-img {
+    width: 70px;
+    height: 70px;
+  }
+  .logo-lines {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+@media (max-width: 480px) {
+  .logo {
+    display: none;
+  }
+  .container {
+    min-width: 320px;
+  }
+  .name {
+    letter-spacing: normal;
+  }
+  .level {
+    width: 50%;
+  }
+  
+}
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <div class="profile">
+          <div class="profile-photo"></div>
+          <div class="profile-info">
+            <h2 class="heading heading-light">
+              Profile
+            </h2>
+            <p class="profile-text">
+              Hello! I’m Aman. Aspiring Web Developer with a strong foundation in programming and problem-solving. 
+              Proficient in JavaScript, SQL, and Python with experience in blockchain, software engineering, and full-stack development.
+            </p>
+            <div class="contacts">
+              <div class="contacts-item">
+                <h3 class="contacts-title">
+                  <i class="fas fa-phone-volume"></i>
+                  Phone
+                </h3>
+                <a href="tel:+919876543210" class="contacts-text">+91-9876543210</a>
+              </div>
+              <div class="contacts-item">
+                <h3 class="contacts-title">
+                  <i class="fas fa-envelope"></i>
+                  Email
+                </h3>
+                <a href="mailto:aman@example.com" class="contacts-text">aman@gmail.com</a>
+              </div>
+              <div class="contacts-item">
+                <h3 class="contacts-title">
+                  <i class="fas fa-map-marker-alt"></i>
+                  Location
+                </h3>
+                <address class="contacts-text">
+                  Bihar, India
+                </address>
+              </div>
+            </div>
+            <h2 class="heading heading-light">Languages</h2>
+            <div class="languages">
+              <div class="language">
+                <span class="language-text">English</span>
+                <strong class="languages-per">100%</strong>
+              </div>
+              <div class="language">
+                <span class="language-text">Hindi</span>
+                <strong class="languages-per">100%</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="resume">
+          <div class="resume-wrap">
+            <div class="about">
+              <h1 class="name">Aman</h1>
+              <span class="position">Web Developer / Software Engineer</span>
+              <address class="about-address">Bihar, India</address>
+              <div class="about-contacts">  
+                <a class="about-contacts__link" href="https://www.linkedin.com">
+                  <b>LinkedIn</b>
+                </a> |
+                <a class="about-contacts__link" href="https://github.com/">
+                  <b>Github</b>
+                </a> |
+                <a class="about-contacts__link" href="https://leetcode.com/">
+                  <b>LeetCode</b>
+                </a>
+              </div>
+            </div>
+            <div class="education">
+              <h2 class="heading heading_dark">
+                Education
+              </h2>
+              <ul class="list">
+                <li class="list-item list-item_non-border">
+                  <h4 class="list-item__title">Kalinga Institute of Industrial Technology</h4>
+                  <span class="list-item__date">2022 – 2026</span>
+                  <p class="list-item__text">B.Tech - Electronics and Computer Science Engineering - CGPA: 8.2, Bhubaneswar, Odisha</p>
+                </li>
+                <li class="list-item list-item_non-border">
+                  <h4 class="list-item__title">DAV Public School Sec-4</h4>
+                  <span class="list-item__date">2021</span>
+                  <p class="list-item__text">Higher Secondary Education - Percentage: 89.4, Bokaro, Jharkhand</p>
+                </li>
+                <li class="list-item list-item_non-border">
+                  <h4 class="list-item__title">DAV Public School Dayanand Vihar</h4>
+                  <span class="list-item__date">2019</span>
+                  <p class="list-item__text">Secondary Education - Percentage: 86.4, Aurangabad, Bihar</p>
+                </li>
+              </ul>
+            </div>
+            <div class="projects">
+              <h2 class="heading heading_dark">
+                Projects
+              </h2>
+              <ul class="list">
+                <li class="list-item">
+                  <h4 class="list-item__title">Calculator</h4>
+                  <span class="list-item__date">2024</span>
+                  <p class="list-item__text">Developed a functional calculator using JavaScript, HTML, and CSS with real-time calculation capabilities.</p>
+                </li>
+                <li class="list-item">
+                  <h4 class="list-item__title">Portfolio</h4>
+                  <span class="list-item__date">2024</span>
+                  <p class="list-item__text">Created a visually appealing portfolio showcasing projects and enhancing visibility.</p>
+                </li>
+                <li class="list-item">
+                  <h4 class="list-item__title">Blockchain Vehicle Transactions</h4>
+                  <span class="list-item__date">2024</span>
+                  <p class="list-item__text">Engineered a blockchain-based solution to secure and verify vehicle transactions using Solidity and Python.</p>
+                </li>
+              </ul>
+            </div>
+            <div class="skills">
+              <h2 class="heading heading_dark heading_skills">
+                Skills
+              </h2>
+              <ul class="skills-list">
+                <li class="skills-list__item">
+                  Python
+                  <div class="level level-90"></div>
+                </li>
+                <li class="skills-list__item">
+                  JavaScript
+                  <div class="level level-85"></div>
+                </li>
+                <li class="skills-list__item">
+                  HTML & CSS
+                  <div class="level level-90"></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</body>
+</html>
