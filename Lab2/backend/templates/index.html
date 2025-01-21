@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat vs Dog Classification</title>
+</head>
+<body>
+    <h1>Upload an Image</h1>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <label for="model">Choose a Model:</label>
+        <select name="model" id="model">
+            <option value="svm">SVM</option>
+            <option value="random_forest">Random Forest</option>
+            <option value="logistic_regression">Logistic Regression</option>
+            <option value="kmeans">K-Means</option>
+            <option value="cnn">CNN</option>
+        </select>
+        <br><br>
+        <input type="file" name="image" required>
+        <br><br>
+        <button type="submit">Classify</button>
+    </form>
+</body>
+</html>
