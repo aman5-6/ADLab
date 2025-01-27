@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Comparison</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    img {
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Model Accuracy Comparison</h1>
+  <button onclick="fetchComparison()">Compare Models</button>
+  
+  <div id="results">
+    <p id="status"></p>
+    <div id="images"></div> 
+    <p id="info"></p>
+  </div>
+
+  <script>
+    function fetchComparison() {
+      const statusElement = document.getElementById('status');
+      const imagesElement = document.getElementById('images');
+      const infoParagraph = document.getElementById('info');
+
+
+      // Update the status
+      statusElement.innerText = 'Fetching comparison data...';
+      imagesElement.innerHTML = ''; // Clear previous images
+      info.innerHTML = 'The Accuracy of Linear Regression Model is 99.995% and LSTM model is 98.55%. '
+      setTimeout(() => {
+        // Set image URLs
+        const imageUrl1 = 'images/lr_graph.png';  // Update to relative path
+        const imageUrl2 = 'images/lstm_graph.png';  // Update to relative path if applicable
+
+        statusElement.innerText = '';  // Clear the status message
+
+        // Create image elements for the two images
+        const image1 = document.createElement('img');
+        image1.src = imageUrl1; // Set the first image URL
+        image1.alt = 'Model Comparison Image 1';
+
+        const image2 = document.createElement('img');
+        image2.src = imageUrl2; // Set the second image URL
+        image2.alt = 'Model Comparison Image 2';
+
+        // Append images to the page
+        imagesElement.appendChild(image1);
+        imagesElement.appendChild(image2);
+      }, 1000); // Simulate a delay (e.g., API request)
+    }
+  </script>
+</body>
+</html>
