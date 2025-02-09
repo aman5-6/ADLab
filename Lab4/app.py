@@ -6,7 +6,7 @@ import fitz  # PyMuPDF for extracting text from PDFs
 app = Flask(__name__)
 
 # Set your Groq API key as an environment variable
-GROQ_API_KEY = "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"
+GROQ_API_KEY = os.getenv('GROQ_API_KEY')
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 MODEL_ID = "llama-3.3-70b-versatile"
 
